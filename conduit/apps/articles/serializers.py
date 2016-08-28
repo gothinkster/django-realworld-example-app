@@ -2,7 +2,8 @@ from rest_framework import serializers
 
 from conduit.apps.profiles.serializers import ProfileSerializer
 
-from .models import Article, Comment
+from .models import Article, Comment, Tag
+from .relations import TagRelatedField
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -14,6 +15,8 @@ class ArticleSerializer(serializers.ModelSerializer):
     favoritesCount = serializers.SerializerMethodField(
         method_name='get_favorites_count'
     )
+
+    tagList = TagRelatedField(many=True, required=False, source='tags')
 
     # Django REST Framework makes it possible to create a read-only field that
     # gets it's value by calling a function. In this case, the client expects
@@ -33,6 +36,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'favorited',
             'favoritesCount',
             'slug',
+            'tagList',
             'title',
             'updatedAt',
         )
@@ -40,7 +44,14 @@ class ArticleSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         author = self.context.get('author', None)
 
-        return Article.objects.create(author=author, **validated_data)
+        tags = validated_data.pop('tags', [])
+
+        article = Article.objects.create(author=author, **validated_data)
+
+        for tag in tags:
+            article.tags.add(tag)
+
+        return article
 
     def get_created_at(self, instance):
         return instance.created_at.isoformat()
@@ -92,3 +103,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
     def get_updated_at(self, instance):
         return instance.updated_at.isoformat()
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ('tag',)
+
+    def to_representation(self, obj):
+        return obj.tag
