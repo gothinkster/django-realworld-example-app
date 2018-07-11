@@ -6,19 +6,26 @@
 
 This repo is functionality complete — PR's and issues welcome!
 
+
+## Prerequisites
+
+* Python 3.4+
+* Git
+* Shell prompt ([Git BASH for windows](https://gitforwindows.org/) recommended for windows)
+
+
 ## Installation
 
-1. Clone this repository: `git clone git@github.com:gothinkster/productionready-django-api.git`.
-2. `cd` into `conduit-django`: `cd productionready-django-api`.
-3. Install [pyenv](https://github.com/yyuu/pyenv#installation).
-4. Install [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv#installation).
-5. Install Python 3.5.2: `pyenv install 3.5.2`.
-6. Create a new virtualenv called `productionready`: `pyenv virtualenv 3.5.2 productionready`.
-7. Set the local virtualenv to `productionready`: `pyenv local productionready`.
-8. Reload the `pyenv` environment: `pyenv rehash`.
+1. Clone this repository: `git clone git@github.com:gothinkster/django-realworld-example-app.git`.
+2. `cd` into `django-realworld-example-app`.
+3. Create a new virtualenv `python -m venv venv/`
+4. Install requirements `venv/bin/pip install -r requirements.txt`
+5. Create database `venv/bin/python manage.py migrate`
+6. Create superuser `venv/bin/python manage.py createsuperuser`
+7. Run dev server `venv/bin/python manage.py runserver 0.0.0.0:4000`
 
-If all went well then your command line prompt should now start with `(productionready)`.
 
-If your command line prompt does not start with `(productionready)` at this point, try running `pyenv activate productionready` or `cd ../productionready-django-api`. 
+#### Notes
 
-If pyenv is still not working, visit us in the Thinkster Slack channel so we can help you out.
+* `python` should be Python 3.4+, check using `python --version`. To be explicit, if on Linux/MacOS you may have a `python3.5` or `python3.6` on your path.
+* If using windows use `venv\Scripts\python` instead of `venv/bin/python`
