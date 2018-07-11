@@ -1,8 +1,6 @@
 TODO namespace APIs into apps/api/
-TODO use pipdeptree to freeze all requirements
 TODO add tests (prefer unittest for now)
 TODO rm django-extensions (not used?)
 TODO marry CORS_ORIGIN_WHITELIST with ALLOW_HOSTS
 TODO form opinion on dev/staging/prod settings split (perfer common.py pattern with some settings imported from ini at root)
 TODO move config to root https://github.com/agconti/cookiecutter-django-rest/pull/571/files
-TODO add setup.py for packaging as reusable django app (src and wheel)

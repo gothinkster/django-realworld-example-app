@@ -18,12 +18,9 @@ This repo is functionality complete — PR's and issues welcome!
 
 1. Clone this repository: `git clone git@github.com:gothinkster/django-realworld-example-app.git`.
 2. `cd` into `django-realworld-example-app`.
-3. Create a new virtualenv `python -m venv venv/`
-4. Upgrade python packaging tools `venv/bin/python -m pip install -U pip setuptools wheel`
-5. Install requirements `venv/bin/pip install -r requirements.txt`
-6. Create database `venv/bin/python manage.py migrate`
-7. Create superuser `venv/bin/python manage.py createsuperuser`
-8. Run dev server `venv/bin/python manage.py runserver 0.0.0.0:4000`
+3. Bootstrap the environment `bin/bootstrap.sh`
+
+Django local dev server should now be serving on port 4000
 
 
 #### Notes
