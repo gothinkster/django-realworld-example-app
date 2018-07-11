@@ -1,4 +1,3 @@
-TODO add admin
 TODO namespace APIs into apps/api/
 TODO use pipdeptree to freeze all requirements
 TODO add tests (prefer unittest for now)
