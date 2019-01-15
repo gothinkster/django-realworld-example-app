@@ -4,7 +4,7 @@
 
 <a href="https://thinkster.io/tutorials/django-json-api" target="_blank"><img width="454" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
 
-This repo is functionality complete — PR's and issues welcome!
+This repo is functionality complete — PR's and issues welcome! Test
 
 ## Installation
 

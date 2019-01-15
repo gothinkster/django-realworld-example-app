@@ -1,0 +1,31 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.DOCKER_REGISTRY}}/paper-street-soap-co/django-realworld-example-app:{{.VERSION}}"
+  artifacts:
+  - imageName: changeme
+    workspace: .
+    docker: {}
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+profiles:
+- name: dev
+  build:
+    tagPolicy:
+      envTemplate:
+        template: "{{.DOCKER_REGISTRY}}/paper-street-soap-co/django-realworld-example-app:{{.DIGEST_HEX}}"
+    artifacts:
+    - docker: {}
+    local: {}
+  deploy:
+    helm:
+      releases:
+      - name: django-realworld-example-app
+        chartPath: charts/django-realworld-example-app
+        setValueTemplates:
+          image.repository: "{{.DOCKER_REGISTRY}}/paper-street-soap-co/django-realworld-example-app"
+          image.tag: "{{.DIGEST_HEX}}"
