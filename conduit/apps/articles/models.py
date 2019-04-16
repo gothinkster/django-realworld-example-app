@@ -23,6 +23,10 @@ class Article(TimestampedModel):
         'articles.Tag', related_name='articles'
     )
 
+    category = models.ManyToManyField(
+        'articles.Category', related_name='articles'
+    )
+
     def __str__(self):
         return self.title
 
@@ -45,3 +49,34 @@ class Tag(TimestampedModel):
 
     def __str__(self):
         return self.tag
+
+
+class Category(TimestampedModel):
+    """
+    Here we assume that a user can create categories
+    for themselves.
+    """
+    name = models.CharField(unique=True, max_length=255)
+    slug = models.SlugField(db_index=True, unique=True)
+    parent = models.ForeignKey(
+            'self', blank=True, null=True,
+            related_name='sub_categories',
+            on_delete=models.CASCADE)
+
+    class Meta:
+        """
+        unique_together makes sure that a category's slug isn't
+        the same as that of its parent
+        """
+        unique_together = ('slug', 'parent',)
+        verbose_name = 'categories'
+
+    def __str__(self):
+        full_path = [self.name]
+
+        k = self.parent
+
+        while k:
+            full_path.append(k.name)
+            k = k.parent
+        return ' :: '.join(full_path[::-1])
