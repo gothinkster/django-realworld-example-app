@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from conduit.apps.profiles.serializers import ProfileSerializer
 
-from .models import Article, Comment, Tag
+from .models import Article, Category, Comment, Tag
 from .relations import TagRelatedField
 
 
@@ -112,3 +112,15 @@ class TagSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         return obj.tag
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    parent = serializers.CharField(source='parent_category')
+    name = serializers.CharField(source='article_category')
+
+    class Meta:
+        model = Category
+        fields = ('name', 'parent',)
+
+    def to_representation(self, obj):
+        return obj.name
