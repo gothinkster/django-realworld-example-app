@@ -17,6 +17,8 @@ COPY . /drf_src
 # NOTE: all the directives that follow in the Dockerfile will be executed in
 # that directory.
 WORKDIR /drf_src
+RUN mkdir databases
+Run echo '/databases' >> .gitignore
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
