@@ -28,4 +28,5 @@ EXPOSE 8000
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
 
+# Run when container starts
 CMD /start.sh
