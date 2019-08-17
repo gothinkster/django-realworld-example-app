@@ -6,6 +6,10 @@ FROM python:3.5.7
 # to the terminal with out buffering it first
 ENV PYTHONUNBUFFERED 1
 
+ENV DRF_DEBUG_MODE False
+ENV DRF_ALLOWED_HOSTS *
+
+
 # Get the Real World example app
 COPY . /drf_src
 
@@ -21,4 +25,7 @@ VOLUME /drf_src
 
 EXPOSE 8000
 
-CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
+ADD start.sh /start.sh
+RUN chmod 755 /start.sh
+
+CMD /start.sh
