@@ -20,6 +20,7 @@ class Profile(TimestampedModel):
     # In addition to the `bio` field, each user may have a profile image or
     # avatar. Similar to `bio`, this field is not required. It may be blank.
     image = models.URLField(blank=True)
+    #image=models.FileField(upload_to='profile_pictures', blank=True)
 
     # This is an example of a Many-To-Many relationship where both sides of the
     # relationship are of the same model. In this case, the model is `Profile`.
@@ -29,12 +30,14 @@ class Profile(TimestampedModel):
     follows = models.ManyToManyField(
         'self',
         related_name='followed_by',
-        symmetrical=False
+        symmetrical=False,
+        blank=True
     )
 
     favorites = models.ManyToManyField(
         'articles.Article',
-        related_name='favorited_by'
+        related_name='favorited_by',
+        blank=True
     )
 
 
