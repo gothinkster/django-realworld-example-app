@@ -33,6 +33,7 @@ pipeline {
       steps {
         sh 'ls'
         sh 'cd .. && ls && cd .. && ls'
+        sh 'docker ps -a'
       }
     }
   }
