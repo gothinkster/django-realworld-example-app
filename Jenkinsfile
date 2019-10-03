@@ -31,7 +31,7 @@ pipeline {
 
       }
       steps {
-        sh 'ls sonar-scanner-4.0.0.1744-linux/'
+        sh 'ls'
       }
     }
   }
