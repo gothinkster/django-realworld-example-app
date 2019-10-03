@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'python:3'
+    dockerfile {
+      filename 'Dockerfile'
     }
 
   }
@@ -13,7 +13,7 @@ pipeline {
     }
     stage('requirements') {
       steps {
-        sh 'pip install requirements.txt'
+        sh 'pip freeze'
       }
     }
   }
