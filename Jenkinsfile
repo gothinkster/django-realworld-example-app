@@ -32,6 +32,7 @@ pipeline {
       }
       steps {
         sh 'ls'
+        sh 'cd .. && ls && cd .. && ls'
       }
     }
   }
