@@ -8,8 +8,8 @@ pipeline {
   stages {
     stage('analasys') {
       steps {
-        dockerNode(image: 'cloudbees/jnlp-slave-with-java-build-tools') {
-          git 'https://github.com/jglick/simple-maven-project-with-tests'
+        dockerNode(image: 'edumco/sonar-scanner:SLIM') {
+          sh 'ls'
         }
 
       }
