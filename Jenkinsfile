@@ -10,10 +10,6 @@ pipeline {
       }
       steps {
         sh 'ls'
-        dockerNode(image: 'edumco/sonar-scanner') {
-          sh 'ls'
-        }
-
       }
     }
   }
