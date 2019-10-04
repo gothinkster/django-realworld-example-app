@@ -14,4 +14,4 @@ CMD apt update && \
     rm sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties && \
     cp sonar-scanner.properties sonar-scanner-4.0.0.1744-linux/conf/ && \
     apt purge unzip && \
-    /bin/bash
+    sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
