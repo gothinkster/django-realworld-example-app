@@ -8,8 +8,10 @@ pipeline {
   stages {
     stage('analasys') {
       steps {
-        node(label: 'docker') {
-          sh 'ls'
+        dockerNode(image: 'cloudbees/jnlp-slave-with-java-build-tools') {
+          git 'https://github.com/jglick/simple-maven-project-with-tests'
+          sh 'mvn -B -Dmaven.test.failure.ignore install'
+          junit '**/target/surefire-reports/TEST-*.xml'
         }
 
       }
