@@ -11,6 +11,10 @@ pipeline {
       steps {
         sh 'ls'
         sh 'cd ../ && ls && cd ../../ && ls && cd ../../../'
+        dockerNode(image: 'edumco/sonar-scanner') {
+          echo 'helooooooo'
+        }
+
       }
     }
   }
