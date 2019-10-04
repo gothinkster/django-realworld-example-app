@@ -2,16 +2,16 @@ FROM openjdk:8-jre-slim
 
 RUN apt update && \
     apt install -y --no-install-recommends wget && \
-    wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip && \
+    cd / && wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.0.0.1744-linux.zip && \
     apt purge -y wget && \
     rm -rf /var/lib/apt/lists/*       
 
-COPY sonar-scanner.properties sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties
+COPY sonar-scanner.properties /sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties
 
 CMD apt update && \
     apt install -y unzip && \
-    unzip sonar-scanner-cli-4.0.0.1744-linux.zip && \
-    rm sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties && \
-    cp sonar-scanner.properties sonar-scanner-4.0.0.1744-linux/conf/ && \
+    unzip /sonar-scanner-cli-4.0.0.1744-linux.zip && \
+    rm /sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties && \
+    cp /sonar-scanner.properties sonar-scanner-4.0.0.1744-linux/conf/ && \
     apt purge unzip && \
-    sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
+    /sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner
