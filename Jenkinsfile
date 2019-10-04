@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         sh 'ls'
-        sh 'cd ../../../../ && ls'
+        sh 'cd ../../../../../ && ls'
       }
     }
   }
