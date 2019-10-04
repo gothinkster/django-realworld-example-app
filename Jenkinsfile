@@ -9,7 +9,7 @@ pipeline {
     stage('novo') {
       steps {
         sh 'ls'
-        sh 'sudo docker ps'
+        sh 'cd /'
       }
     }
   }
