@@ -9,7 +9,7 @@ pipeline {
     stage('novo') {
       steps {
         sh 'ls'
-        sh 'cd / && ls'
+        sh 'cd / && ls && cd home && ls'
       }
     }
   }
