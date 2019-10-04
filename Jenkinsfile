@@ -9,7 +9,8 @@ pipeline {
 
       }
       steps {
-        dockerNode(image: 'edumco/sonar-scanner:slim') {
+        sh 'ls'
+        dockerNode(image: 'edumco/sonar-scanner') {
           sh 'ls'
         }
 
