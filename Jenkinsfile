@@ -9,6 +9,7 @@ pipeline {
     stage('novo') {
       steps {
         sh 'ls'
+        sh 'docker ps'
       }
     }
   }
