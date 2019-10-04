@@ -1,20 +1,14 @@
 pipeline {
-  agent none
-  stages {
-    stage('analasys') {
-      agent {
-        docker {
-          image 'edumco/sonar-scanner'
-        }
+  agent {
+    docker {
+      image 'edumco/sonar-scanner:slim'
+    }
 
-      }
+  }
+  stages {
+    stage('novo') {
       steps {
         sh 'ls'
-        sh 'cd ../ && ls && cd ../../ && ls && cd ../../../'
-        dockerNode(image: 'edumco/sonar-scanner') {
-          echo 'helooooooo'
-        }
-
       }
     }
   }
