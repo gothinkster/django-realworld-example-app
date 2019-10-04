@@ -1,18 +1,11 @@
 pipeline {
-  agent none
-  stages {
-    stage('version') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile.pytest'
-        }
-
-      }
-      steps {
-        sh 'python --version'
-        archiveArtifacts(allowEmptyArchive: true, onlyIfSuccessful: true, artifacts: '*')
-      }
+  agent {
+    dockerfile {
+      filename 'Dockerfile.sonar'
     }
+
+  }
+  stages {
     stage('static-analasys') {
       agent {
         dockerfile {
@@ -22,7 +15,6 @@ pipeline {
       }
       steps {
         sh 'ls'
-        sh 'cd .. && ls && cd .. && ls'
         sh './sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
       }
     }
