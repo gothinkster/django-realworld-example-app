@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'Dockerfile.sonar'
+    docker {
+      image 'edumco/sonar-scanner:slim'
     }
 
   }
