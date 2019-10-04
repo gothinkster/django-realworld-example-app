@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh 'ls'
         sh 'cd .. && ls && cd .. && ls'
-        sh 'docker ps -a'
+        sh './sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
       }
     }
   }
