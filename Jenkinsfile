@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'edumco/sonar-scanner:slim'
+      image 'edumco/sonar-scanner'
     }
 
   }
