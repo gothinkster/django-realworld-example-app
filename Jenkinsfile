@@ -4,23 +4,13 @@ pipeline {
     stage('version') {
       agent {
         dockerfile {
-          filename 'Dockerfile'
+          filename 'Dockerfile.pytest'
         }
 
       }
       steps {
         sh 'python --version'
-      }
-    }
-    stage('requirements') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-
-      }
-      steps {
-        sh 'pip freeze'
+        archiveArtifacts(allowEmptyArchive: true, onlyIfSuccessful: true, artifacts: '*')
       }
     }
     stage('static-analasys') {
