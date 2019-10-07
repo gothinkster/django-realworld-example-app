@@ -9,7 +9,7 @@ pipeline {
       steps {
         bitbucketStatusNotify 'INPROGRESS'
         withSonarQubeEnv('sonarqube') {
-          sh 'sonar-scanner'
+          sh '/home/ubuntu/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
         }
 
         timeout(time: 3, unit: 'MINUTES') {
