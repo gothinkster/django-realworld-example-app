@@ -4,7 +4,7 @@ pipeline {
     stage('analisys') {
       agent any
       environment {
-        scannerHome = 'sonarscanner'
+        scannerHome = 'sonnarqube'
       }
       steps {
         bitbucketStatusNotify 'INPROGRESS'
