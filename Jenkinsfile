@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('Análise estática') {
+    stage('analisys') {
       agent any
       environment {
         scannerHome = 'sonarscanner'
@@ -9,7 +9,7 @@ pipeline {
       steps {
         bitbucketStatusNotify 'INPROGRESS'
         withSonarQubeEnv('sonarqube') {
-          sh '../../sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
+          sh 'sonar-scanner'
         }
 
         timeout(time: 10, unit: 'MINUTES') {
