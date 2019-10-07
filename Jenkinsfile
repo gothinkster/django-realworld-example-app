@@ -1,16 +1,39 @@
 pipeline {
-  agent {
-    docker {
-      image 'edumco/sonar-scanner'
-    }
-
-  }
+  agent none
   stages {
-    stage('novo') {
+    stage('Análise estática') {
+      agent any
+      environment {
+        scannerHome = 'sonarscanner'
+      }
       steps {
-        sh 'ls'
-        sh 'cd / && ls && cd home && ls'
+        bitbucketStatusNotify 'INPROGRESS'
+        withSonarQubeEnv('sonarqube') {
+          sh '../../sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
+        }
+
+        timeout(time: 10, unit: 'MINUTES') {
+          waitForQualityGate true
+        }
+
       }
     }
+  }
+  post {
+    always {
+      echo 'Pipeline encerrada'
+
+    }
+
+    success {
+      bitbucketStatusNotify 'SUCCESSFUL'
+
+    }
+
+    failure {
+      bitbucketStatusNotify 'FAILED'
+
+    }
+
   }
 }
