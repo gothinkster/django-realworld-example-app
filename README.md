@@ -17,6 +17,7 @@
     2. Hit F5, then select “Python: Django"
     3. CTRL+Click the URL in the terminal
     4. Hit “/admin” and see that there is in fact an article in the DB
+        1. Login with `admin@conduit.com` / `p@ssword`
     5. Launch the URL and hit “/api/artilces”…No articles
     6. The breakpoint will be hit
     7. Step the debugger, see the issue and then correct it
