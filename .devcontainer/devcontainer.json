@@ -1,6 +1,7 @@
 {
     "extensions": [
         "/home/cloudenv/workspace/.devcontainer/codelinecomplete-0.3.9-demo.vsix",
-        "/home/cloudenv/workspace/.devcontainer/intellicode-refactorings-0.0.5.vsix"
+        "/home/cloudenv/workspace/.devcontainer/intellicode-refactorings-0.0.5.vsix",
+        "vsls-contrib.spaces"
     ]
 }
