@@ -14,7 +14,7 @@
     3. Terminals (run a command such as “ls”)
 3. Debugging/Port forwarding
     1. Set a breakpoint on line 30 of articles/views.py
-    2. Hit F5, then select “Python”, and then the “Django” configuration
+    2. Hit F5, then select “Python: Django"
     3. CTRL+Click the URL in the terminal
     4. Hit “/admin” and see that there is in fact an article in the DB
     5. Launch the URL and hit “/api/artilces”…No articles
