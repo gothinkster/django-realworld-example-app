@@ -1,6 +1,6 @@
 ## Onboarding (5 minutes)
 
-1. Developer sees an issue on GitHub and clicks a link to deep link into an instance (link is above). The issue mentions that the REST API no longer returns articles, even though they're in the database - [Create VSO Environment](https://online-ppe.core.vsengsaas.visualstudio.com/environments/new?name=Conduit&repo=https://github.com/lostintangent/Conduit)
+1. Developer sees an [issue on GitHub](https://github.com/lostintangent/Conduit/issues/1) and clicks a link to deep link into an instance. The issue mentions that the REST API no longer returns articles, even though they're in the database - [Create VSO Environment](https://online-ppe.core.vsengsaas.visualstudio.com/environments/new?name=Conduit&repo=https://github.com/lostintangent/Conduit)
     1. Show that they don’t have Python installed on their local machine
 1. They create the environment and are taken into the web editor, with…
     1. The repo automatically cloned
@@ -16,13 +16,13 @@
     1. Set a breakpoint on line 30 of articles/views.py
     2. Hit F5, then select “Python: Django"
     3. CTRL+Click the URL in the terminal
-    5. Launch the URL and hit "/api/articles"…No articles
+    5. Launch the URL and hit “/api/artilces”…No articles
     6. The breakpoint will be hit
     7. Step the debugger, see the issue and then correct it
     8. Change line 30 to “if author is not None:” and then re-run the app. You’ll now see the article data returned
 4. “It’s just like developing with VS Code, but without any of the setup, and accessible from anywhere”
     1. If I need to open it in desktop, I can (seamless interop, so you can choose how to work)
-        1. Show the change on line 30 in articles/vidws.py
+        1. Show the change on line 30 in articles/views.py
     2. When I’m done, I can shut it down, or let it automatically go to sleep
 
 > Dev starts to make their intended change, and is assisted along the way by IntelliCode…
