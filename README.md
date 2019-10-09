@@ -42,4 +42,4 @@
 2. Chat (via the LS Chat extension being installed)
 3. Inline code comments (doing a lightweight code review)
 4. Guest IntelliCode (Optional)
-5. Debugging/Port forwarding (Optional) - “These are work, despite the fact that the “host” is actually running in the cloud”
+5. Debugging/Port forwarding (Optional) - “These work, despite the fact that the host is actually running in the cloud!”
