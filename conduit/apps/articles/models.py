@@ -39,6 +39,7 @@ class Comment(TimestampedModel):
     )
 
 
+
 class Tag(TimestampedModel):
     tag = models.CharField(max_length=255)
     slug = models.SlugField(db_index=True, unique=True)
