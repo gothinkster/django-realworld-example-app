@@ -1,24 +1,46 @@
-# ![Django DRF Example App](project-logo.png)
+## Onboarding (5 minutes)
 
-> ### Example Django DRF codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) API spec.
+1. Developer sees an issue on GitHub and clicks a link to deep link into an instance (link is above) - [Create VSO Environment](https://online-ppe.core.vsengsaas.visualstudio.com/environments/new?name=Conduit&repo=https://github.com/lostintangent/Conduit)
+    1. Show that they don’t have Python installed on their local machine
+1. They create the environment and are taken into the web editor, with…
+    1. The repo automatically cloned
+    2. Their Python dependencies installed (Python/PIP are now available in the terminal) - Run “python —version” from the terminal
+    3. Their extensions automatically installed (the Python extension) - Switch to the extensions tab and show it (May need to reload)
+    4. The app automatically built (PIP install was run) - Show the VSO terminal instance
+    5. Their dot files automatically roamed (shell aliases are available) - Run the “party” command
+2. Full fidelity tools
+    1. File access/Search
+    2. Extensions (show GitLens?)
+    3. Terminals (run a command such as “ls”)
+3. Debugging/Port forwarding
+    1. Set a breakpoint on line 30 of articles/views.py
+    2. Hit F5, then select “Python”, and then the “Django” configuration
+    3. CTRL+Click the URL in the terminal
+    4. Hit “/admin” and see that there is in fact an article in the DB
+    5. Launch the URL and hit “/api/artilces”…No articles
+    6. The breakpoint will be hit
+    7. Step the debugger, see the issue and then correct it
+    8. Change line 30 to “if author is not None:” and then re-run the app. You’ll now see the article data returned
+4. “It’s just like developing with VS Code, but without any of the setup, and accessible from anywhere”
+    1. If I need to open it in desktop, I can (seamless interop, so you can choose how to work)
+        1. Show the change on line 30 in articles/vidws.py
+    2. When I’m done, I can shut it down, or let it automatically go to sleep
 
-<a href="https://thinkster.io/tutorials/django-json-api" target="_blank"><img width="454" src="https://raw.githubusercontent.com/gothinkster/realworld/master/media/learn-btn-hr.png" /></a>
+> Dev starts to make their intended change, and is assisted along the way by IntelliCode…
 
-This repo is functionality complete — PR's and issues welcome!
+## AI-assistance (3 minutes)
 
-## Installation
+1. Completion suggestions
+2. Whole line completion
+3. Refactorings
+4. PR
 
-1. Clone this repository: `git clone git@github.com:gothinkster/productionready-django-api.git`.
-2. `cd` into `conduit-django`: `cd productionready-django-api`.
-3. Install [pyenv](https://github.com/yyuu/pyenv#installation).
-4. Install [pyenv-virtualenv](https://github.com/yyuu/pyenv-virtualenv#installation).
-5. Install Python 3.5.2: `pyenv install 3.5.2`.
-6. Create a new virtualenv called `productionready`: `pyenv virtualenv 3.5.2 productionready`.
-7. Set the local virtualenv to `productionready`: `pyenv local productionready`.
-8. Reload the `pyenv` environment: `pyenv rehash`.
+> Dev wants to get some early feedback on their change, so they invite their mentor into an LS session…
 
-If all went well then your command line prompt should now start with `(productionready)`.
+## Real-time Collaboration (3 minutes) -  “Full-fidelity Live Share works in the browser”
 
-If your command line prompt does not start with `(productionready)` at this point, try running `pyenv activate productionready` or `cd ../productionready-django-api`. 
-
-If pyenv is still not working, visit us in the Thinkster Slack channel so we can help you out.
+1. Direct invite (via Contacts pane)
+2. Chat (via the LS Chat extension being installed)
+3. Inline code comments (doing a lightweight code review)
+4. Guest IntelliCode (Optional)
+5. Debugging/Port forwarding (Optional) - “These are work, despite the fact that the “host” is actually running in the cloud”
