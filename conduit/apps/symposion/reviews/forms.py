@@ -2,8 +2,14 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from conduit.apps.symposion.reviews.models import Review, Comment, ProposalMessage, VOTES
+from symposion.reviews.models import Review, Comment, ProposalMessage, VOTES
 
+class BulkPresentationForm(forms.Form):
+    talk_ids = forms.CharField(
+        label=_("Talk ids"),
+        max_length=500,
+        help_text=_("Provide a comma seperated list of talk ids to accept.")
+    )
 
 class ReviewForm(forms.ModelForm):
     class Meta:
@@ -28,11 +34,3 @@ class SpeakerCommentForm(forms.ModelForm):
     class Meta:
         model = ProposalMessage
         fields = ["message"]
-
-
-class BulkPresentationForm(forms.Form):
-    talk_ids = forms.CharField(
-        label=_("Talk ids"),
-        max_length=500,
-        help_text=_("Provide a comma seperated list of talk ids to accept.")
-    )

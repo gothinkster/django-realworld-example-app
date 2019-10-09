@@ -8,15 +8,16 @@ from django.views.decorators.http import require_POST
 from account.decorators import login_required
 
 # @@@ switch to pinax-teams
-from conduit.apps.symposion.teams.models import Team
+from symposion.teams.models import Team
 
-from conduit.apps.symposion.conf import settings
-from conduit.apps.symposion.proposals.models import ProposalBase, ProposalSection
-from conduit.apps.symposion.utils.mail import send_email
+from symposion.conf import settings
+from symposion.proposals.models import ProposalBase, ProposalSection
+from symposion.utils.mail import send_email
 
-from conduit.apps.symposion.reviews.forms import ReviewForm, SpeakerCommentForm
-from conduit.apps.symposion.reviews.forms import BulkPresentationForm
-from conduit.apps.symposion.reviews.models import (
+from symposion.reviews.forms import ReviewForm, SpeakerCommentForm
+from symposion.reviews.forms import BulkPresentationForm
+from symposion.reviews.forms import StaffCommentForm
+from symposion.reviews.models import (
     ReviewAssignment, Review, LatestVote, ProposalResult, NotificationTemplate,
     ResultNotification
 )
@@ -57,9 +58,9 @@ def proposals_generator(request, queryset, user_pk=None, check_speaker=True):
 
         yield obj
 
-# Returns an not-permitted page with a specific error message
-def access_not_permitted(request, error_message):
+def access_not_permitted(request,error_message):
     return render(request, "symposion/reviews/access_not_permitted.html", error_message)
+
 
 # Returns a list of all proposals, proposals reviewed by the user, or the proposals the user has
 # yet to review depending on the link user clicks in dashboard
@@ -67,7 +68,7 @@ def access_not_permitted(request, error_message):
 def review_section(request_review, section_slug, assigned=False, reviewed="all"):
 
     if not request_review.user.has_perm("reviews.can_review_%s" % section_slug):
-        return access_not_permitted(request_review, "you do not have access to reviews")
+        return render(request_review, "symposion/reviews/access_not_permitted.html", "you do not have access to reviews")
 
     section = get_object_or_404(ProposalSection, section__slug=section_slug)
     queryset = ProposalBase.objects.filter(kind__section=section.section)
@@ -108,7 +109,7 @@ def review_list(request_review_list, section_slug, user_pk):
     # review list is being asked for, don't let them in
     if not request_review_list.user.has_perm("reviews.can_manage_%s" % section_slug):
         if not request_review_list.user.pk == user_pk:
-            return access_not_permitted(request_review_list, "you do not have access to review lists")
+            return render(request_review_list, "symposion/reviews/access_not_permitted.html", "you do not have access to review lists")
 
     queryset = ProposalBase.objects.select_related("speaker__user", "result")
     reviewed = LatestVote.objects.filter(user__pk=user_pk).values_list("proposal", flat=True)
@@ -459,6 +460,8 @@ def result_notification_prepare(request_result_notification_prepare, section_slu
     }
     return render(request_result_notification_prepare, "symposion/reviews/result_notification_prepare.html", ctx)
 
+def accept_staff_suggestion(staffId):
+    return 
 
 @login_required
 def result_notification_send(request_result_notification_send, section_slug, status):
@@ -510,3 +513,12 @@ def result_notification_send(request_result_notification_send, section_slug, sta
     send_mass_mail(emails)
 
     return redirect("result_notification", section_slug=section_slug, status=status)
+
+
+#TODO complete implementation of staff comment form - split and mark accepted
+@login_required
+def review_staff_comment(request_review_staff_comment, section_slug):
+    if not request_review_staff_comment.user.has_perm("reviews.can_manage%s" % section_slug):
+        return render(request_review_staff_comment,"symposion/reviews/access_not_permitted.html", "you do not have permission to accept staff reviews")
+    if request_review_staff_comment.method == "POST":
+        form = StaffCommentForm(request_review_staff_comment.POST)
