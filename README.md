@@ -16,10 +16,14 @@
     1. Set a breakpoint on line 30 of articles/views.py
     2. Hit F5, then select “Python: Django"
     3. CTRL+Click the URL in the terminal
-    5. Launch the URL and hit “/api/artilces”…No articles
+    5. Launch the URL and hit “/api/articles”…No articles (!)
     6. The breakpoint will be hit
     7. Step the debugger, see the issue and then correct it
     8. Change line 30 to “if author is not None:” and then re-run the app. You’ll now see the article data returned
+    9. Remove the breakpoint on line 30, hit the debug refresh button, and refresh the browser window to show the article data correctly being returned
+4. Git operations
+    1. Commit the changes you made and highlight that you're Git identity was roamed
+    1. Push the changes back to the remote, to highlight you automatically have permissions to the repo
 4. “It’s just like developing with VS Code, but without any of the setup, and accessible from anywhere”
     1. If I need to open it in desktop, I can (seamless interop, so you can choose how to work)
         1. Show the change on line 30 in articles/views.py
