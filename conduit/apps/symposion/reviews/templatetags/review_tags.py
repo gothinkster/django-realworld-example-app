@@ -1,6 +1,6 @@
 from django import template
 
-from symposion.reviews.models import ReviewAssignment
+from conduit.apps.symposion.reviews.models import ReviewAssignment
 
 
 register = template.Library()

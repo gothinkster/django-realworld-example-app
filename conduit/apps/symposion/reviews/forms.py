@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from symposion.reviews.models import Review, Comment, ProposalMessage, VOTES
+from conduit.apps.symposion.reviews.models import Review, Comment, ProposalMessage, VOTES
 
 
 class ReviewForm(forms.ModelForm):

@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.db import IntegrityError, transaction
 from django.db.models import Q
 
-from symposion.schedule.models import (Day, Presentation, Room, SlotKind, Slot,
+from conduit.apps.symposion.schedule.models import (Day, Presentation, Room, SlotKind, Slot,
                                        SlotRoom)
 
 

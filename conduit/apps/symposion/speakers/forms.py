@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django import forms
 
-from symposion.speakers.models import Speaker
+from conduit.apps.symposion.speakers.models import Speaker
 
 
 class SpeakerForm(forms.ModelForm):

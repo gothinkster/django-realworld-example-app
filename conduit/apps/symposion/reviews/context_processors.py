@@ -1,4 +1,4 @@
-from symposion.proposals.models import ProposalSection
+from conduit.apps.symposion.proposals.models import ProposalSection
 
 
 def reviews(request):

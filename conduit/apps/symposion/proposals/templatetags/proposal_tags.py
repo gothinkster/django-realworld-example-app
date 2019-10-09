@@ -1,6 +1,6 @@
 from django import template
 
-from symposion.proposals.models import AdditionalSpeaker
+from conduit.apps.symposion.proposals.models import AdditionalSpeaker
 
 
 register = template.Library()

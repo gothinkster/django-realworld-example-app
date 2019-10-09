@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
-from symposion.proposals.models import ProposalSection
+from conduit.apps.symposion.proposals.models import ProposalSection
 
 
 class Command(BaseCommand):

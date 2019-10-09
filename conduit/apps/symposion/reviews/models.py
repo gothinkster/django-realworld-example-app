@@ -10,9 +10,9 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
-from symposion.markdown_parser import parse
-from symposion.proposals.models import ProposalBase
-from symposion.schedule.models import Presentation
+from conduit.apps.symposion.markdown_parser import parse
+from conduit.apps.symposion.proposals.models import ProposalBase
+from conduit.apps.symposion.schedule.models import Presentation
 
 
 def score_expression():

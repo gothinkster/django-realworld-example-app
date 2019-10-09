@@ -19,14 +19,14 @@ from django.utils.translation import ugettext_lazy as _
 from account.decorators import login_required
 from account.models import EmailAddress
 
-from symposion.proposals.models import (
+from conduit.apps.symposion.proposals.models import (
     ProposalBase, ProposalSection, ProposalKind
 )
-from symposion.proposals.models import SupportingDocument, AdditionalSpeaker
-from symposion.speakers.models import Speaker
-from symposion.utils.mail import send_email
+from conduit.apps.symposion.proposals.models import SupportingDocument, AdditionalSpeaker
+from conduit.apps.symposion.speakers.models import Speaker
+from conduit.apps.symposion.utils.mail import send_email
 
-from symposion.proposals.forms import (
+from conduit.apps.symposion.proposals.forms import (
     AddSpeakerForm, SupportingDocumentCreateForm
 )
 
