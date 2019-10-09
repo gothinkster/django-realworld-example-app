@@ -1,6 +1,6 @@
 ## Onboarding (5 minutes)
 
-1. Developer sees an issue on GitHub and clicks a link to deep link into an instance (link is above) - [Create VSO Environment](https://online-ppe.core.vsengsaas.visualstudio.com/environments/new?name=Conduit&repo=https://github.com/lostintangent/Conduit)
+1. Developer sees an issue on GitHub and clicks a link to deep link into an instance (link is above). The issue mentions that the REST API no longer returns articles, even though they're in the database - [Create VSO Environment](https://online-ppe.core.vsengsaas.visualstudio.com/environments/new?name=Conduit&repo=https://github.com/lostintangent/Conduit)
     1. Show that they don’t have Python installed on their local machine
 1. They create the environment and are taken into the web editor, with…
     1. The repo automatically cloned
