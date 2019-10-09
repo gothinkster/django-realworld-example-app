@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
+    "python.pythonPath": "pythonenv3.7/bin/python",
     "python.linting.enabled": false,
     "python.jediEnabled": false
 }
