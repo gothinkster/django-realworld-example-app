@@ -1,0 +1,6 @@
+{
+    "extensions": [
+        "/home/cloudenv/workspace/.devcontainer/codelinecomplete-0.3.7-dogfood.vsix",
+        "/home/cloudenv/workspace/.devcontainer/intellicode-refactorings-0.0.5.vsix"
+    ]
+}
