@@ -1,0 +1,573 @@
+# Symposion japanese translation.
+# Copyright (C) 2014-2015, pinax team
+# This file is distributed under the same license as the symposion package.
+# Hiroshi Miura <miurahr@linux.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: symposion\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-31 14:47-0600\n"
+"PO-Revision-Date: 2015-06-18 10:04+0900\n"
+"Last-Translator: Hiroshi Miura <miurahr@linux.com>\n"
+"Language-Team: Japanese translation team <https://www.transifex.com/projects/p/symposion/language/ja/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: ja\n"
+
+#: cms/models.py:23
+msgid "Draft"
+msgstr "草稿"
+
+#: cms/models.py:24
+msgid "Public"
+msgstr "公開"
+
+#: cms/models.py:57
+msgid "Path can only contain letters, numbers and hyphens and end with /"
+msgstr ""
+"パス名には、英数字、ハイフン(-)のみが使えます。また末尾は'/'の必要がありま"
+"す。"
+
+#: conference/models.py:15
+msgid "title"
+msgstr "タイトル"
+
+#: conference/models.py:18 conference/models.py:58
+msgid "start date"
+msgstr "開始日"
+
+#: conference/models.py:19 conference/models.py:59
+msgid "end date"
+msgstr "終了日"
+
+#: conference/models.py:22
+msgid "timezone"
+msgstr "タイムゾーン"
+
+#: conference/models.py:41 conference/models.py:52 sponsorship/models.py:18
+msgid "conference"
+msgstr "カンファレンス"
+
+#: conference/models.py:42
+msgid "conferences"
+msgstr "カンファレンス"
+
+#: conference/models.py:54 sponsorship/models.py:19 sponsorship/models.py:155
+msgid "name"
+msgstr "名前"
+
+#: conference/models.py:65
+msgid "section"
+msgstr "セクション"
+
+#: conference/models.py:66
+msgid "sections"
+msgstr "セクション"
+
+#: proposals/models.py:71 templates/conference/user_list.html:60
+msgid "Name"
+msgstr "名前"
+
+#: proposals/models.py:86
+msgid "Brief Description"
+msgstr "概要"
+
+#: proposals/models.py:88
+msgid ""
+"If your proposal is accepted this will be made public and printed in the "
+"program. Should be one paragraph, maximum 400 characters."
+msgstr ""
+"もし提案が受諾されたら、これは公開され、配布されるプログラムに印刷されます。"
+"段落は一つのみで、４００文字以内で記載してください。"
+
+#: proposals/models.py:92
+msgid "Detailed Abstract"
+msgstr "提案の詳細"
+
+#: proposals/models.py:93
+msgid ""
+"Detailed outline. Will be made public if your proposal is accepted. Edit "
+"using <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+"講演詳細：提案が受諾された場合に公開されます。<a href=\"http://www.markdown."
+"jp/what-is-markdown/\" target='_blank'>Markdown</a>を用いて記述してください。"
+
+#: proposals/models.py:99
+msgid ""
+"Anything else you'd like the program committee to know when making their "
+"selection: your past experience, etc. This is not made public. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+"プログラム委員に、講演者の過去の経験など、とくに伝えたいことがあれば、記述し"
+"てください。これは公開されることはありません。<a href=\"http://www.markdown."
+"jp/what-is-markdown/\" target='_blank'>Markdown</a>を用いて記述してください。"
+
+#: proposals/models.py:153
+msgid "Pending"
+msgstr "ペンディング"
+
+#: proposals/models.py:154 templates/proposals/_pending_proposal_row.html:16
+msgid "Accepted"
+msgstr "アクセプト"
+
+#: proposals/models.py:155
+msgid "Declined"
+msgstr "リジェクト"
+
+#: sponsorship/models.py:20
+msgid "order"
+msgstr "順序"
+
+#: sponsorship/models.py:21
+msgid "cost"
+msgstr "経費"
+
+#: sponsorship/models.py:22 sponsorship/models.py:156
+msgid "description"
+msgstr "記述"
+
+#: sponsorship/models.py:22
+msgid "This is private."
+msgstr "これは非公開です。"
+
+#: sponsorship/models.py:26
+msgid "sponsor level"
+msgstr "スポンサーのグレード"
+
+#: sponsorship/models.py:27
+msgid "sponsor levels"
+msgstr "スポンサーのグレード"
+
+#: sponsorship/models.py:38
+msgid "applicant"
+msgstr "応募者"
+
+#: sponsorship/models.py:41
+msgid "Sponsor Name"
+msgstr "スポンサー名"
+
+#: sponsorship/models.py:42
+msgid "external URL"
+msgstr "外部URL"
+
+#: sponsorship/models.py:43
+msgid "annotation"
+msgstr ""
+
+#: sponsorship/models.py:44
+msgid "Contact Name"
+msgstr "連絡先の名前"
+
+#: sponsorship/models.py:45
+msgid "Contact Email"
+msgstr "連絡先のEmail"
+
+#: sponsorship/models.py:46 sponsorship/models.py:167
+msgid "level"
+msgstr "グレード"
+
+#: sponsorship/models.py:47
+msgid "added"
+msgstr ""
+
+#: sponsorship/models.py:48
+msgid "active"
+msgstr "有効"
+
+#: sponsorship/models.py:60 sponsorship/models.py:182
+msgid "sponsor"
+msgstr "スポンサー"
+
+#: sponsorship/models.py:61
+msgid "sponsors"
+msgstr "スポンサー"
+
+#: sponsorship/models.py:157
+msgid "type"
+msgstr "タイプ"
+
+#: sponsorship/models.py:166 sponsorship/models.py:183
+msgid "benefit"
+msgstr ""
+
+#: sponsorship/models.py:170 sponsorship/models.py:187
+msgid "max words"
+msgstr ""
+
+#: sponsorship/models.py:171 sponsorship/models.py:188
+msgid "other limits"
+msgstr "他の制限"
+
+#: sponsorship/models.py:192
+msgid "text"
+msgstr "テキスト"
+
+#: sponsorship/models.py:193
+msgid "file"
+msgstr "ファイル"
+
+#: templates/dashboard.html:16
+msgid "Speaking"
+msgstr "講演"
+
+#: templates/dashboard.html:92 templates/sponsorship/detail.html:8
+msgid "Sponsorship"
+msgstr "スポンサー"
+
+#: templates/dashboard.html:132 templates/reviews/review_detail.html:75
+msgid "Reviews"
+msgstr "レビュー"
+
+#: templates/dashboard.html:177
+msgid "Teams"
+msgstr "チーム"
+
+#: templates/boxes/box.html:9
+msgid "Editing content:"
+msgstr "コンテンツ編集："
+
+#: templates/cms/page_edit.html:11
+msgid "Edit page at:"
+msgstr ""
+
+#: templates/conference/user_list.html:59
+msgid "Email"
+msgstr "電子メール"
+
+#: templates/conference/user_list.html:61
+msgid "Speaker Profile?"
+msgstr "講演者のプロフィール"
+
+#: templates/emails/teams_user_applied/message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        User \"%(username)s\" has applied to join <b>%(team_name)s</b> on "
+"%(site_name)s.\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        To accept this application and see any other pending applications, "
+"visit the following url:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+msgstr ""
+"\n"
+"    <p>\n"
+"        ユーザ \"%(username)s\" は、%(site_name)s　の<b>%(team_name)s</b> に"
+"応募しました。 \n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        この応募を受諾したり、他の保留されている応募者を確認するには、つぎの"
+"URLを参照してください:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+
+#: templates/emails/teams_user_applied/subject.txt:1
+#, python-format
+msgid "%(username)s has applied to to join \"%(team)s\""
+msgstr "%(username)s は、 \"%(team)s\"に応募しました。"
+
+#: templates/emails/teams_user_invited/message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        You have been invited to join <b>%(team_name)s</b> on "
+"%(site_name)s.\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        To accept this invitation, visit the following url:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+msgstr ""
+"\n"
+"    <p>\n"
+"         %(site_name)sの<b>%(team_name)s</b>に参加するよう招待されました。\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        招待を受諾するには、つぎのURLをクリックしてください:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+
+#: templates/emails/teams_user_invited/subject.txt:1
+#, python-format
+msgid "You have been invited to join \"%(team)s\""
+msgstr " \"%(team)s\"に参加するよう招待されました。"
+
+#: templates/proposals/_pending_proposal_row.html:12
+msgid "Cancelled"
+msgstr "キャンセル済み"
+
+#: templates/proposals/_pending_proposal_row.html:18
+msgid "Submitted"
+msgstr "投稿済み"
+
+#: templates/proposals/_pending_proposal_row.html:21
+msgid "Invited"
+msgstr "招待された"
+
+#: templates/proposals/_pending_proposal_row.html:30
+msgid "Choose Response"
+msgstr "応答の選択"
+
+#: templates/proposals/_pending_proposal_row.html:35
+msgid "Accept invitation"
+msgstr "招待を受諾"
+
+#: templates/proposals/_pending_proposal_row.html:37
+msgid "Decline invitation"
+msgstr "招待を拒否"
+
+#: templates/proposals/_proposal_fields.html:4
+msgid "Submitted by"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:7
+msgid "Track"
+msgstr "トラック"
+
+#: templates/proposals/_proposal_fields.html:10
+msgid "Audience Level"
+msgstr "受講者のレベル"
+
+#: templates/proposals/_proposal_fields.html:14
+msgid "Additional Speakers"
+msgstr "追加の講演者"
+
+#: templates/proposals/_proposal_fields.html:21
+msgid "Invitation Sent"
+msgstr "送信された招待"
+
+#: templates/proposals/_proposal_fields.html:28
+msgid "Description"
+msgstr "記述"
+
+#: templates/proposals/_proposal_fields.html:31
+msgid "Abstract"
+msgstr "講演概要"
+
+#: templates/proposals/_proposal_fields.html:34
+msgid "Notes"
+msgstr "備考"
+
+#: templates/proposals/_proposal_fields.html:37
+msgid "Speaker Bio"
+msgstr "講演者略歴"
+
+#: templates/proposals/_proposal_fields.html:40
+msgid "Documents"
+msgstr "資料"
+
+#: templates/proposals/proposal_cancel.html:7
+msgid "Cancel Proposal"
+msgstr "講演提案のキャンセル"
+
+#: templates/proposals/proposal_cancel.html:16
+msgid "No, keep it for now"
+msgstr "いいえ、このままにします。"
+
+#: templates/proposals/proposal_detail.html:14
+msgid "Edit this proposal"
+msgstr "この提案を編集"
+
+#: templates/proposals/proposal_detail.html:17
+msgid "Cancel this proposal"
+msgstr "この提案をキャンセル"
+
+#: templates/proposals/proposal_detail.html:21
+msgid "Remove me from this proposal"
+msgstr "この提案から自分を削除する。"
+
+#: templates/proposals/proposal_detail.html:33
+#: templates/reviews/review_detail.html:74
+msgid "Proposal Details"
+msgstr "提案の詳細"
+
+#: templates/proposals/proposal_detail.html:35
+#: templates/proposals/proposal_detail.html:47
+msgid "Supporting Documents"
+msgstr "補足資料"
+
+#: templates/proposals/proposal_detail.html:38
+msgid "Reviewer Feedback"
+msgstr "レビュアーからのフィードバック"
+
+#: templates/proposals/proposal_detail.html:57
+msgid "delete"
+msgstr "削除"
+
+#: templates/proposals/proposal_detail.html:64
+msgid "No supporting documents attached to this proposal."
+msgstr "この提案に補足資料は添付されていません。"
+
+#: templates/proposals/proposal_detail.html:66
+msgid "Add Document"
+msgstr "資料の追加"
+
+#: templates/proposals/proposal_detail.html:73
+msgid "Conversation with Reviewers"
+msgstr "レビュアーとの会話記録"
+
+#: templates/proposals/proposal_detail.html:83
+msgid "Leave a Message"
+msgstr "メッセージを残す"
+
+#: templates/proposals/proposal_detail.html:85
+msgid "You can leave a message for the reviewers here."
+msgstr "メッセージをレビューアに残すことができます。"
+
+#: templates/proposals/proposal_detail.html:94
+msgid "Submit"
+msgstr "投稿する"
+
+#: templates/proposals/proposal_speaker_manage.html:7
+msgid "Proposal:"
+msgstr "講演提案："
+
+#: templates/proposals/proposal_speaker_manage.html:10
+msgid "Edit proposal"
+msgstr "講演提案の編集"
+
+#: templates/proposals/proposal_speaker_manage.html:14
+msgid "Current Speakers"
+msgstr "現在登録されている講演者"
+
+#: templates/proposals/proposal_speaker_manage.html:20
+msgid "pending invitation"
+msgstr "保留されている招待"
+
+#: templates/proposals/proposal_speaker_manage.html:24
+msgid "Add another speaker"
+msgstr "他の講演者を追加"
+
+#: templates/proposals/proposal_submit.html:6
+msgid "Submit A Proposal"
+msgstr "提案を投稿"
+
+#: templates/reviews/_review_table.html:6
+#: templates/reviews/result_notification.html:45
+msgid "Speaker / Title"
+msgstr "講演者／タイトル"
+
+#: templates/reviews/_review_table.html:7
+#: templates/reviews/result_notification.html:46
+msgid "Category"
+msgstr "カテゴリ"
+
+#: templates/reviews/_review_table.html:9
+msgid "+1"
+msgstr ""
+
+#: templates/reviews/_review_table.html:10
+msgid "+0"
+msgstr ""
+
+#: templates/reviews/_review_table.html:11
+msgid "-0"
+msgstr ""
+
+#: templates/reviews/_review_table.html:12
+msgid "-1"
+msgstr ""
+
+#: templates/reviews/_review_table.html:13
+msgid "Your Rating"
+msgstr "あなたの投票"
+
+#: templates/reviews/base.html:64
+msgid "All Reviews"
+msgstr "全てのレビュアー"
+
+#: templates/reviews/base.html:77
+msgid "Voting Status"
+msgstr "投票の状態"
+
+#: templates/reviews/result_notification.html:47
+msgid "Status"
+msgstr "状態"
+
+#: templates/reviews/result_notification.html:48
+msgid "Notified?"
+msgstr "連絡済み？"
+
+#: templates/reviews/review_detail.html:76
+msgid "Speaker Feedback"
+msgstr "講演者へのフィードバック"
+
+#: templates/reviews/review_detail.html:84
+msgid "Current Results"
+msgstr "現在のところの結果"
+
+#: templates/reviews/review_detail.html:91
+msgid "Total Responses"
+msgstr "全応答数"
+
+#: templates/reviews/review_detail.html:108
+msgid "Submit Review"
+msgstr "レビューの投稿"
+
+#: templates/reviews/review_detail.html:148
+msgid "Conversation with the submitter"
+msgstr "投稿者への連絡"
+
+#: templates/reviews/review_detail.html:162
+msgid "Send a message"
+msgstr "メッセージ送信"
+
+#: templates/reviews/review_detail.html:164
+msgid ""
+"\n"
+"                            If you'd like to communicate with the submitter, "
+"use the following form and he or she will be\n"
+"                            notified and given the opportunity to respond.\n"
+"                        "
+msgstr ""
+"\n"
+"                           もし、投稿者と連絡したい場合は、次の投稿フォームを"
+"用いて知らせることができます。\n"
+"                           そして、回答の機会を与えることができます。\n"
+"                        "
+
+#: templates/schedule/_slot_edit.html:5
+msgid "Edit Slot"
+msgstr "スロットの編集"
+
+#: templates/speakers/speaker_create.html:7
+#: templates/speakers/speaker_create.html:14
+msgid "Create Speaker Profile"
+msgstr "講演者プロフィールの作成"
+
+#: templates/speakers/speaker_edit.html:7
+#: templates/speakers/speaker_edit.html:14
+msgid "Edit Speaker Profile"
+msgstr "講演者プロフィールの編集"
+
+#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:14
+msgid "Add a Sponsor"
+msgstr "スポンサーの追加"
+
+#: templates/sponsorship/apply.html:7
+msgid "Apply to be a Sponsor"
+msgstr "スポンサーに応募する"
+
+#: templates/sponsorship/apply.html:17
+msgid "Apply to Be a Sponsor"
+msgstr "スポンサーに応募する"
+
+#: templates/sponsorship/list.html:7 templates/sponsorship/list.html.py:14
+msgid "About Our Sponsors"
+msgstr "スポンサーについて"

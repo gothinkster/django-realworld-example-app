@@ -1,0 +1,537 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-31 14:47-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cms/models.py:23
+msgid "Draft"
+msgstr ""
+
+#: cms/models.py:24
+msgid "Public"
+msgstr ""
+
+#: cms/models.py:57
+msgid "Path can only contain letters, numbers and hyphens and end with /"
+msgstr ""
+
+#: conference/models.py:15
+msgid "title"
+msgstr ""
+
+#: conference/models.py:18 conference/models.py:58
+msgid "start date"
+msgstr ""
+
+#: conference/models.py:19 conference/models.py:59
+msgid "end date"
+msgstr ""
+
+#: conference/models.py:22
+msgid "timezone"
+msgstr ""
+
+#: conference/models.py:41 conference/models.py:52 sponsorship/models.py:18
+msgid "conference"
+msgstr ""
+
+#: conference/models.py:42
+msgid "conferences"
+msgstr ""
+
+#: conference/models.py:54 sponsorship/models.py:19 sponsorship/models.py:155
+msgid "name"
+msgstr ""
+
+#: conference/models.py:65
+msgid "section"
+msgstr ""
+
+#: conference/models.py:66
+msgid "sections"
+msgstr ""
+
+#: proposals/models.py:71 templates/conference/user_list.html:60
+msgid "Name"
+msgstr ""
+
+#: proposals/models.py:86
+msgid "Brief Description"
+msgstr ""
+
+#: proposals/models.py:88
+msgid ""
+"If your proposal is accepted this will be made public and printed in the "
+"program. Should be one paragraph, maximum 400 characters."
+msgstr ""
+
+#: proposals/models.py:92
+msgid "Detailed Abstract"
+msgstr ""
+
+#: proposals/models.py:93
+msgid ""
+"Detailed outline. Will be made public if your proposal is accepted. Edit "
+"using <a href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+
+#: proposals/models.py:99
+msgid ""
+"Anything else you'd like the program committee to know when making their "
+"selection: your past experience, etc. This is not made public. Edit using <a "
+"href='http://daringfireball.net/projects/markdown/basics' "
+"target='_blank'>Markdown</a>."
+msgstr ""
+
+#: proposals/models.py:153
+msgid "Pending"
+msgstr ""
+
+#: proposals/models.py:154 templates/proposals/_pending_proposal_row.html:16
+msgid "Accepted"
+msgstr ""
+
+#: proposals/models.py:155
+msgid "Declined"
+msgstr ""
+
+#: sponsorship/models.py:20
+msgid "order"
+msgstr ""
+
+#: sponsorship/models.py:21
+msgid "cost"
+msgstr ""
+
+#: sponsorship/models.py:22 sponsorship/models.py:156
+msgid "description"
+msgstr ""
+
+#: sponsorship/models.py:22
+msgid "This is private."
+msgstr ""
+
+#: sponsorship/models.py:26
+msgid "sponsor level"
+msgstr ""
+
+#: sponsorship/models.py:27
+msgid "sponsor levels"
+msgstr ""
+
+#: sponsorship/models.py:38
+msgid "applicant"
+msgstr ""
+
+#: sponsorship/models.py:41
+msgid "Sponsor Name"
+msgstr ""
+
+#: sponsorship/models.py:42
+msgid "external URL"
+msgstr ""
+
+#: sponsorship/models.py:43
+msgid "annotation"
+msgstr ""
+
+#: sponsorship/models.py:44
+msgid "Contact Name"
+msgstr ""
+
+#: sponsorship/models.py:45
+msgid "Contact Email"
+msgstr ""
+
+#: sponsorship/models.py:46 sponsorship/models.py:167
+msgid "level"
+msgstr ""
+
+#: sponsorship/models.py:47
+msgid "added"
+msgstr ""
+
+#: sponsorship/models.py:48
+msgid "active"
+msgstr ""
+
+#: sponsorship/models.py:60 sponsorship/models.py:182
+msgid "sponsor"
+msgstr ""
+
+#: sponsorship/models.py:61
+msgid "sponsors"
+msgstr ""
+
+#: sponsorship/models.py:157
+msgid "type"
+msgstr ""
+
+#: sponsorship/models.py:166 sponsorship/models.py:183
+msgid "benefit"
+msgstr ""
+
+#: sponsorship/models.py:170 sponsorship/models.py:187
+msgid "max words"
+msgstr ""
+
+#: sponsorship/models.py:171 sponsorship/models.py:188
+msgid "other limits"
+msgstr ""
+
+#: sponsorship/models.py:192
+msgid "text"
+msgstr ""
+
+#: sponsorship/models.py:193
+msgid "file"
+msgstr ""
+
+#: templates/dashboard.html:16
+msgid "Speaking"
+msgstr ""
+
+#: templates/dashboard.html:92 templates/sponsorship/detail.html:8
+msgid "Sponsorship"
+msgstr ""
+
+#: templates/dashboard.html:132 templates/reviews/review_detail.html:75
+msgid "Reviews"
+msgstr ""
+
+#: templates/dashboard.html:177
+msgid "Teams"
+msgstr ""
+
+#: templates/boxes/box.html:9
+msgid "Editing content:"
+msgstr ""
+
+#: templates/cms/page_edit.html:11
+msgid "Edit page at:"
+msgstr ""
+
+#: templates/conference/user_list.html:59
+msgid "Email"
+msgstr ""
+
+#: templates/conference/user_list.html:61
+msgid "Speaker Profile?"
+msgstr ""
+
+#: templates/emails/teams_user_applied/message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        User \"%(username)s\" has applied to join <b>%(team_name)s</b> on "
+"%(site_name)s.\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        To accept this application and see any other pending applications, "
+"visit the following url:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+msgstr ""
+
+#: templates/emails/teams_user_applied/subject.txt:1
+#, python-format
+msgid "%(username)s has applied to to join \"%(team)s\""
+msgstr ""
+
+#: templates/emails/teams_user_invited/message.html:3
+#, python-format
+msgid ""
+"\n"
+"    <p>\n"
+"        You have been invited to join <b>%(team_name)s</b> on "
+"%(site_name)s.\n"
+"    </p>\n"
+"\n"
+"    <p>\n"
+"        To accept this invitation, visit the following url:\n"
+"        <a href=\"http://%(site_url)s%(team_url)s\">http://%(site_url)s"
+"%(team_url)s</a>\n"
+"    </p>\n"
+msgstr ""
+
+#: templates/emails/teams_user_invited/subject.txt:1
+#, python-format
+msgid "You have been invited to join \"%(team)s\""
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:12
+msgid "Cancelled"
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:18
+msgid "Submitted"
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:21
+msgid "Invited"
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:30
+msgid "Choose Response"
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:35
+msgid "Accept invitation"
+msgstr ""
+
+#: templates/proposals/_pending_proposal_row.html:37
+msgid "Decline invitation"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:4
+msgid "Submitted by"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:7
+msgid "Track"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:10
+msgid "Audience Level"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:14
+msgid "Additional Speakers"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:21
+msgid "Invitation Sent"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:28
+msgid "Description"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:31
+msgid "Abstract"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:34
+msgid "Notes"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:37
+msgid "Speaker Bio"
+msgstr ""
+
+#: templates/proposals/_proposal_fields.html:40
+msgid "Documents"
+msgstr ""
+
+#: templates/proposals/proposal_cancel.html:7
+msgid "Cancel Proposal"
+msgstr ""
+
+#: templates/proposals/proposal_cancel.html:16
+msgid "No, keep it for now"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:14
+msgid "Edit this proposal"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:17
+msgid "Cancel this proposal"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:21
+msgid "Remove me from this proposal"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:33
+#: templates/reviews/review_detail.html:74
+msgid "Proposal Details"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:35
+#: templates/proposals/proposal_detail.html:47
+msgid "Supporting Documents"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:38
+msgid "Reviewer Feedback"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:57
+msgid "delete"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:64
+msgid "No supporting documents attached to this proposal."
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:66
+msgid "Add Document"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:73
+msgid "Conversation with Reviewers"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:83
+msgid "Leave a Message"
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:85
+msgid "You can leave a message for the reviewers here."
+msgstr ""
+
+#: templates/proposals/proposal_detail.html:94
+msgid "Submit"
+msgstr ""
+
+#: templates/proposals/proposal_speaker_manage.html:7
+msgid "Proposal:"
+msgstr ""
+
+#: templates/proposals/proposal_speaker_manage.html:10
+msgid "Edit proposal"
+msgstr ""
+
+#: templates/proposals/proposal_speaker_manage.html:14
+msgid "Current Speakers"
+msgstr ""
+
+#: templates/proposals/proposal_speaker_manage.html:20
+msgid "pending invitation"
+msgstr ""
+
+#: templates/proposals/proposal_speaker_manage.html:24
+msgid "Add another speaker"
+msgstr ""
+
+#: templates/proposals/proposal_submit.html:6
+msgid "Submit A Proposal"
+msgstr ""
+
+#: templates/reviews/_review_table.html:6
+#: templates/reviews/result_notification.html:45
+msgid "Speaker / Title"
+msgstr ""
+
+#: templates/reviews/_review_table.html:7
+#: templates/reviews/result_notification.html:46
+msgid "Category"
+msgstr ""
+
+#: templates/reviews/_review_table.html:9
+msgid "+1"
+msgstr ""
+
+#: templates/reviews/_review_table.html:10
+msgid "+0"
+msgstr ""
+
+#: templates/reviews/_review_table.html:11
+msgid "-0"
+msgstr ""
+
+#: templates/reviews/_review_table.html:12
+msgid "-1"
+msgstr ""
+
+#: templates/reviews/_review_table.html:13
+msgid "Your Rating"
+msgstr ""
+
+#: templates/reviews/base.html:64
+msgid "All Reviews"
+msgstr ""
+
+#: templates/reviews/base.html:77
+msgid "Voting Status"
+msgstr ""
+
+#: templates/reviews/result_notification.html:47
+msgid "Status"
+msgstr ""
+
+#: templates/reviews/result_notification.html:48
+msgid "Notified?"
+msgstr ""
+
+#: templates/reviews/review_detail.html:76
+msgid "Speaker Feedback"
+msgstr ""
+
+#: templates/reviews/review_detail.html:84
+msgid "Current Results"
+msgstr ""
+
+#: templates/reviews/review_detail.html:91
+msgid "Total Responses"
+msgstr ""
+
+#: templates/reviews/review_detail.html:108
+msgid "Submit Review"
+msgstr ""
+
+#: templates/reviews/review_detail.html:148
+msgid "Conversation with the submitter"
+msgstr ""
+
+#: templates/reviews/review_detail.html:162
+msgid "Send a message"
+msgstr ""
+
+#: templates/reviews/review_detail.html:164
+msgid ""
+"\n"
+"                            If you'd like to communicate with the submitter, "
+"use the following form and he or she will be\n"
+"                            notified and given the opportunity to respond.\n"
+"                        "
+msgstr ""
+
+#: templates/schedule/_slot_edit.html:5
+msgid "Edit Slot"
+msgstr ""
+
+#: templates/speakers/speaker_create.html:7
+#: templates/speakers/speaker_create.html:14
+msgid "Create Speaker Profile"
+msgstr ""
+
+#: templates/speakers/speaker_edit.html:7
+#: templates/speakers/speaker_edit.html:14
+msgid "Edit Speaker Profile"
+msgstr ""
+
+#: templates/sponsorship/add.html:7 templates/sponsorship/add.html.py:14
+msgid "Add a Sponsor"
+msgstr ""
+
+#: templates/sponsorship/apply.html:7
+msgid "Apply to be a Sponsor"
+msgstr ""
+
+#: templates/sponsorship/apply.html:17
+msgid "Apply to Be a Sponsor"
+msgstr ""
+
+#: templates/sponsorship/list.html:7 templates/sponsorship/list.html.py:14
+msgid "About Our Sponsors"
+msgstr ""
