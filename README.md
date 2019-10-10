@@ -44,7 +44,7 @@
     
         ```python
         Class StaffRequestForm(forms.Form):
-    	staffIDs = forms.CharField(label=_(“Command separated list of IDs”, max_length=5000)
+	    	staffIDs = forms.CharField(label=_(“Command separated list of IDs”, max_length=5000)
         ```
         
     1. Add the following to the bottom of the `symposion/reviews/views.py` file (within the last function's `if` statement)
