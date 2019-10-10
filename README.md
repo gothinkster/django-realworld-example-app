@@ -39,15 +39,15 @@
 
 ## AI-assistance 
 
-1. Whole line completion
-    1. Add the following code to the bottom of the `symposion/reviews/forms.py` file
+1. Open up the `Todo Tree` activity bar, and display the flattened view (the second toolbar icon)
+1. Click on the first `TODO` item, and add the following code in `symposion/reviews/forms.py`
     
         ```python
         Class StaffRequestForm(forms.Form):
 	    	staffIDs = forms.CharField(label=_(“Command separated list of IDs”, max_length=5000)
         ```
-        
-    1. Add the following to the bottom of the `symposion/reviews/views.py` file (within the last function's `if` statement)
+1. After completing the above, delete the comment
+1. Click on the second todo, and then add the following code to the bottom of `symposion/reviews/views.py` file (within the last function's `if` statement)
     
         ```python
         if form.is_valid():
@@ -55,10 +55,13 @@
 		for staff_ids in staff_ids:
 			accept_staff_suggestion(staff_ids)
         ```
-        
-2. Refactorings (still in `views.py`)
-    1. Replace a call to `render` with a call to `access_not_permitted'
-    1. Replace a second instance
+1. After completing the above, delete the comment. All todos are done!
+1. Refactorings (still in `views.py`)
+    1. Replace the call to `render` on line 520 with a call to `access_not_permitted'
+        ```python
+        return access_not_permitted(request_review_staff_comment, "you do not have permission to accept staff reviews")
+        ```
+    1. Scroll up to line 470, and replace a second instance
     1. Notice that IntelliCode has detected the repeated edits and is suggesting other locations
     1. Click one of the suggestions in the `Problems` pane and accept it
     1. Select another one, but this time, choose to have IntelliCode submit a PR on your behalf (!)

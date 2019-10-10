@@ -206,7 +206,6 @@ def schedule_json(request):
             "kind": slot.kind.label,
             "section": slot.day.schedule.section.slug,
             "conf_key": slot.pk,
-            # TODO: models should be changed.
             # these are model features from other conferences that have forked symposion
             # these have been used almost everywhere and are good candidates for
             # base proposals
