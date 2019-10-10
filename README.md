@@ -2,6 +2,7 @@
 
 1. Install the [JSON Formatter extension](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) for Chrome
 1. Ensure you've already authenticated with VSO + GitHub once, so that you can push changes during the demo, without needing to auth
+1. Ensure that you've opened up the `conduit/apps/articles/views.py` file once, and leave it open, so that VSO will default it to be open for you when you create a new environment
 
 ## Onboarding 
 
