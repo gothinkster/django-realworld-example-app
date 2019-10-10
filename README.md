@@ -34,6 +34,7 @@
     1. If I need to open it in desktop, I can (seamless interop, so you can choose how to work)
         1. Show the change on line 30 in articles/views.py
     2. When I’m done, I can shut it down, or let it automatically go to sleep
+1. With that done, return to the GitHub issue, ready to close it, only to realize that the issue asked you to handle some todos...
 
 > Dev starts to make their intended change, and is assisted along the way by IntelliCode…
 
