@@ -34,3 +34,5 @@ class SpeakerCommentForm(forms.ModelForm):
     class Meta:
         model = ProposalMessage
         fields = ["message"]
+
+# TODO: Add staff request form

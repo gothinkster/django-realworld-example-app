@@ -4,6 +4,7 @@
         "/home/vsonline/workspace/.devcontainer/intellicode-refactorings-0.0.5.vsix",
         "vsls-contrib.spaces",
         "ms-python.python",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "Gruntfuggly.todo-tree"
     ]
 }

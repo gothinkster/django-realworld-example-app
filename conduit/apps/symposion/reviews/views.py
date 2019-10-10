@@ -169,8 +169,6 @@ def review_admin(request_review_admin, section_slug):
     }
     return render(request_review_admin, "symposion/reviews/review_admin.html", ctx)
 
-
-# FIXME: This view is too complex according to flake8
 @login_required
 def review_detail(request_review_detail, pk):
 
@@ -515,10 +513,11 @@ def result_notification_send(request_result_notification_send, section_slug, sta
     return redirect("result_notification", section_slug=section_slug, status=status)
 
 
-#TODO complete implementation of staff comment form - split and mark accepted
+
 @login_required
 def review_staff_comment(request_review_staff_comment, section_slug):
     if not request_review_staff_comment.user.has_perm("reviews.can_manage%s" % section_slug):
         return render(request_review_staff_comment,"symposion/reviews/access_not_permitted.html", "you do not have permission to accept staff reviews")
     if request_review_staff_comment.method == "POST":
         form = StaffCommentForm(request_review_staff_comment.POST)
+        # TODO: complete implementation of staff comment form - split and mark accepted
