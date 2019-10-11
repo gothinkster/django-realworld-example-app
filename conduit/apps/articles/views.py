@@ -27,7 +27,7 @@ class ArticleViewSet(mixins.CreateModelMixin,
 
         # This is the bug
         author = self.request.query_params.get('author', None)
-        if author is not None:
+        if author is None:
             queryset = queryset.filter(author__user__username=author)
 
         tag = self.request.query_params.get('tag', None)
