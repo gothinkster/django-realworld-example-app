@@ -68,7 +68,7 @@ def access_not_permitted(request,error_message):
 def review_section(request_review, section_slug, assigned=False, reviewed="all"):
 
     if not request_review.user.has_perm("reviews.can_review_%s" % section_slug):
-        return render(request_review, "symposion/reviews/access_not_permitted.html", "you do not have access to reviews")
+        return render(request_review, "symposion/reviews/access_not_permitted.html","you do not have access to reviews")
 
     section = get_object_or_404(ProposalSection, section__slug=section_slug)
     queryset = ProposalBase.objects.filter(kind__section=section.section)
@@ -520,4 +520,4 @@ def review_staff_comment(request_review_staff_comment, section_slug):
         return render(request_review_staff_comment,"symposion/reviews/access_not_permitted.html", "you do not have permission to accept staff reviews")
     if request_review_staff_comment.method == "POST":
         form = StaffCommentForm(request_review_staff_comment.POST)
-        # TODO: complete implementation of staff comment form - split and mark accepted
+        # TODO: complete implementation of staff comment form - split and mark accepted            
