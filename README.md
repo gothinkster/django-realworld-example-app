@@ -6,6 +6,8 @@
 
 This repo is functionality complete — PR's and issues welcome!
 
+[![Known Vulnerabilities](https://snyk.io//test/github/edumco/django-realworld-example-app/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/edumco/django-realworld-example-app?targetFile=requirements.txt)
+
 ## Installation
 
 1. Clone this repository: `git clone git@github.com:gothinkster/productionready-django-api.git`.
