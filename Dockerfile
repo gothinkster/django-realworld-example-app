@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.5-slim-stretch
 
 COPY requirements.txt requirements.txt
 
