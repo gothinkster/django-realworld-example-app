@@ -7,6 +7,7 @@
 This repo is functionality complete — PR's and issues welcome!
 
 [![Known Vulnerabilities](https://snyk.io//test/github/edumco/django-realworld-example-app/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/edumco/django-realworld-example-app?targetFile=requirements.txt)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2b926e82b17e47119c473232400fa507)](https://www.codacy.com/manual/edumco/django-realworld-example-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=edumco/django-realworld-example-app&amp;utm_campaign=Badge_Grade)
 
 ## Installation
 
