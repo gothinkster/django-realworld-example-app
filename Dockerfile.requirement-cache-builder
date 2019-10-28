@@ -1,5 +1,0 @@
-FROM python:alpine
-
-COPY requirements.txt requirements.txt
-
-CMD pip download -r requirements.txt -d /requirements 
