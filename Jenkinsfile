@@ -7,7 +7,6 @@ pipeline {
         scannerHome = 'sonnarqube'
       }
       steps {
-        bitbucketStatusNotify 'INPROGRESS'
         withSonarQubeEnv('sonarqube') {
           sh '/home/ubuntu/sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner'
         }
@@ -26,12 +25,10 @@ pipeline {
     }
 
     success {
-      bitbucketStatusNotify 'SUCCESSFUL'
 
     }
 
     failure {
-      bitbucketStatusNotify 'FAILED'
 
     }
 
