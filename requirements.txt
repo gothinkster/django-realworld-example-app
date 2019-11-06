@@ -3,4 +3,4 @@ django-cors-middleware==1.4.0
 django-extensions==2.2.5
 djangorestframework==3.10.3
 PyJWT==1.7.1
-six==1.12.0
+six==1.13.0
