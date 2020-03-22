@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-import os
 import environ
+import os
+import sentry_sdk
+
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +31,13 @@ SECRET_KEY = env('SECRET_KEY')
 DATABASES = {
     'default': env.db(),
 }
+
+# sentry for app monitoring
+sentry_sdk.init(
+    dsn=env('SENTRY_URL'),
+    integrations=[DjangoIntegration()],
+    send_default_pii=True
+)
 
 #CACHES = {
 #    'default': env.cache(),
