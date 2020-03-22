@@ -8,3 +8,4 @@ gunicorn==20.0.4
 django-environ==0.4.5
 psycopg2-binary==2.8.4
 sentry-sdk==0.14.2
+newrelic==5.10.0.138
