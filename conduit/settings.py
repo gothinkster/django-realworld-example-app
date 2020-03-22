@@ -28,9 +28,9 @@ DATABASES = {
     'default': env.db(),
 }
 
-CACHES = {
-    'default': env.cache(),
-}
+#CACHES = {
+#    'default': env.cache(),
+#}
 
 ALLOWED_HOSTS = ['*']
 
