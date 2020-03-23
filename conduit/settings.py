@@ -33,11 +33,12 @@ DATABASES = {
 }
 
 # sentry for app monitoring
-sentry_sdk.init(
-    dsn=env('SENTRY_URL'),
-    integrations=[DjangoIntegration()],
-    send_default_pii=True
-)
+if env('SENTRY_URL', default=False):
+    sentry_sdk.init(
+        dsn=env('SENTRY_URL'),
+        integrations=[DjangoIntegration()],
+        send_default_pii=True
+    )
 
 #CACHES = {
 #    'default': env.cache(),

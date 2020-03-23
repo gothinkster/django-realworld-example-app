@@ -29,6 +29,5 @@ jobs:
       env:
         SECRET_KEY: secret
         DATABASE_URL: sqlite:////tmp/tmp.db
-        SENTRY_URL: http://example.com/
       run: |
         python manage.py test
