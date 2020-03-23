@@ -27,4 +27,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
+        export SECRET_KEY="secret"
+        export DATABASE_URL="sqlite:////tmp/tmp.db"
         python manage.py test
