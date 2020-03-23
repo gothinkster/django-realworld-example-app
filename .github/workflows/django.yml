@@ -26,7 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run Tests
+      env:
+        SECRET_KEY: secret
+        DATABASE_URL: sqlite:////tmp/tmp.db
       run: |
-        export SECRET_KEY="secret"
-        export DATABASE_URL="sqlite:////tmp/tmp.db"
         python manage.py test
