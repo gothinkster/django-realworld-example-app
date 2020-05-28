@@ -108,7 +108,7 @@ class ArticleViewSet(mixins.CreateModelMixin,
 
 class CommentsListCreateAPIView(generics.ListCreateAPIView):
     lookup_field = 'article__slug'
-    lookup_url_kwarg = 'article_slug'
+    lookup_url_kwarg = None
     permission_classes = (IsAuthenticatedOrReadOnly,)
     queryset = Comment.objects.select_related(
         'article', 'article__author', 'article__author__user',
