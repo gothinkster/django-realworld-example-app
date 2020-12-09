@@ -1,5 +1,6 @@
 from rest_framework.views import exception_handler
 
+
 def core_exception_handler(exc, context):
     # If an exception is thrown that we don't explicitly handle here, we want
     # to delegate to the default exception handler offered by DRF. If we do
@@ -17,11 +18,12 @@ def core_exception_handler(exc, context):
 
     if exception_class in handlers:
         # If this exception is one that we can handle, handle it. Otherwise,
-        # return the response generated earlier by the default exception 
+        # return the response generated earlier by the default exception
         # handler.
         return handlers[exception_class](exc, context, response)
 
     return response
+
 
 def _handle_generic_error(exc, context, response):
     # This is about the most straightforward exception handler we can create.
@@ -31,6 +33,7 @@ def _handle_generic_error(exc, context, response):
     }
 
     return response
+
 
 def _handle_not_found_error(exc, context, response):
     view = context.get('view', None)

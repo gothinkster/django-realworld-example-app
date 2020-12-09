@@ -1,0 +1,24 @@
+#################################
+# GitHub Dependabot Config info #
+#################################
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for docker
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for python with pip
+  - package-ecosystem: "pip"
+    directory: "/dependencies"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
