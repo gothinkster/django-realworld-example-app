@@ -18,7 +18,8 @@ jobs:
     - name: Set up Python 3.5
       uses: actions/setup-python@v2
       with:
-        python-version: 3.5.2
+        python-version: 3.5.4
+        # 3.5.2 was not found
       
     - name: Install dependencies
       run: |
