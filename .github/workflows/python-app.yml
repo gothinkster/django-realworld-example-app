@@ -24,10 +24,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest 
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install pytest pipenv
+        # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pipenv install --clear --system
     
-    - name: iInstall pyenv and pyenv-virtualenv
+    - name: Install pyenv and pyenv-virtualenv
       run: |
         brew update
         brew install pyenv pyenv-virtualenv
@@ -50,4 +51,4 @@ jobs:
           
     - name: Test with pytest
       run: |
-        pytest
+        pytest .
