@@ -5,9 +5,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .renderers import UserJSONRenderer
-from .serializers import (
-    LoginSerializer, RegistrationSerializer, UserSerializer
-)
+from .serializers import (LoginSerializer, RegistrationSerializer,
+                          UserSerializer)
 
 
 class RegistrationAPIView(APIView):
