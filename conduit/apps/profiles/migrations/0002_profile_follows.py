@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='profile',
             name='follows',
-            field=models.ManyToManyField(related_name='followed_by', to='profiles.Profile'),
+            field=models.ManyToManyField(
+                related_name='followed_by', to='profiles.Profile'),
         ),
     ]

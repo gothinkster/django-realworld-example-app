@@ -5,6 +5,7 @@ from conduit.apps.profiles.models import Profile
 
 from .models import User
 
+
 @receiver(post_save, sender=User)
 def create_related_profile(sender, instance, created, *args, **kwargs):
     # Notice that we're checking for `created` here. We only want to do this
