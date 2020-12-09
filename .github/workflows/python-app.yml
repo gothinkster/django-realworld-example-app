@@ -24,14 +24,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest pyenv
+        pip install pytest 
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-    - name: iInstall pyenv-virtualenv
+    - name: iInstall pyenv and pyenv-virtualenv
       run: |
-        apt-get update -y
-        git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-        echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+        brew update
+        brew install pyenv pyenv-virtualenv
 
     - name: Pyenv install
       run: |
