@@ -5,12 +5,16 @@ services:
   jenkins-docker:
     privileged: true
     networks:
-      - jenkins
+      jenkins:
+        aliases: 
+          - docker
+
     image: docker:dind
     environment:
-      DOCKER_TLS_CERTDIR: /cert
+      DOCKER_TLS_CERTDIR: /certs
     volumes:
       - jenkins-data:/var/jenkins_home
+      - jenkins-docker-certs:/certs/client
   jenkins-main:
     networks:
       - jenkins
@@ -25,7 +29,7 @@ services:
       JENKINS_ADMIN_ID: admin 
       JENKINS_ADMIN_PASSWORD: "@ART3M1S"
       DOCKER_TLS_VERIFY: 1
-      DOCKER_HOST: tcp://jenkins-docker:2376
+      DOCKER_HOST: tcp://docker:2376
       DOCKER_CERT_PATH: /certs/client
     volumes:
       - jenkins-data:/var/jenkins_home
