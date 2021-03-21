@@ -16,3 +16,4 @@ timestamper:1.12
 workflow-aggregator:2.6
 ws-cleanup:0.39
 docker-plugin:1.2.2
+docker-workflow:1.26
