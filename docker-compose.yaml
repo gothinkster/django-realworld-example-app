@@ -1,25 +1,41 @@
-version: '3'
+version: '3.5'
 
 services:
-  jenkins:
+  # container with docker instance
+  jenkins-docker:
     privileged: true
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+    networks:
+      - jenkins
+    image: docker:dind
     environment:
-      # JAVA_OPTS: -Djenkins.install.runSetupWizard=false
-      JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
+      DOCKER_TLS_CERTDIR: /cert
     volumes:
       - jenkins-data:/var/jenkins_home
+  jenkins-main:
+    networks:
+      - jenkins
+    build:
+      context: ./jenkins
+    environment:
+      # skip initial setup wizard
+      # JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      # setup admin password and credentials
+      # JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
+      
+      JENKINS_ADMIN_ID: admin 
+      JENKINS_ADMIN_PASSWORD: "@ART3M1S"
+      DOCKER_TLS_VERIFY: 1
+      DOCKER_HOST: tcp://jenkins-docker:2376
+      DOCKER_CERT_PATH: /certs/client
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - jenkins-docker-certs:/certs/client:ro
     ports:
       - 8080:8080
       - 50000:50000
-  # jenkins-docker:
-    # image: docker:dind
-    # volumes:
-      # - jenkins-data:/var/jenkins_home
-      # - /var/run/docker.sock:/var/run/docker.sock
-
   
 volumes:
   jenkins-data:
+  jenkins-docker-certs:
+networks:
+  jenkins:
