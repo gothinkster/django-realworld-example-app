@@ -21,11 +21,6 @@ services:
     build:
       context: ./jenkins
     environment:
-      # skip initial setup wizard
-      # JAVA_OPTS: -Djenkins.install.runSetupWizard=false
-      # setup admin password and credentials
-      # JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
-      
       JENKINS_ADMIN_ID: admin 
       JENKINS_ADMIN_PASSWORD: "@ART3M1S"
       DOCKER_TLS_VERIFY: 1

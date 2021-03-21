@@ -1,5 +1,6 @@
 blueocean:1.24.5
 antisamy-markup-formatter:2.1
+authorize-project:1.4.0
 build-timeout:1.20
 cloudbees-folder:6.15
 configuration-as-code:1.47
@@ -9,6 +10,7 @@ git:4.7.0
 locale:1.4
 github-branch-source:2.10.2
 mailer:1.33
+matrix-auth:2.6.6
 pipeline-github-lib:1.0
 pipeline-stage-view:2.19
 ssh-slaves:1.31.5
