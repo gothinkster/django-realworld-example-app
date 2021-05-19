@@ -1,6 +1,6 @@
-Django
-django-cors-middleware
-django-extensions
-djangorestframework
-PyJWT
-six
+Django==3.3.4
+django-cors-middleware==3.3.4
+django-extensions==3.3.4
+djangorestframework==3.3.4
+PyJWT==3.3.4
+six==3.3.4
