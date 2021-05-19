@@ -90,3 +90,5 @@ ENV/
 
 # SQLite3
 db.sqlite3
+
+.venv
