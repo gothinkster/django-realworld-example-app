@@ -25,4 +25,6 @@ urlpatterns = [
         CommentsDestroyAPIView.as_view()),
 
     url(r'^tags/?$', TagListAPIView.as_view()),
+
+    
 ]
