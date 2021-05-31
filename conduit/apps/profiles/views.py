@@ -5,7 +5,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Profile
+from .models import *
 from .renderers import ProfileJSONRenderer
 from .serializers import ProfileSerializer
 
@@ -70,3 +70,35 @@ class ProfileFollowAPIView(APIView):
         })
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class AllTeamAPIView(APIView):
+
+    def get(self, request, format=None):
+        try:
+            data = []
+
+            all_team = Team.objects.all()
+
+            for team in all_team:
+                myDict = {}
+                myDict['name'] = team.name
+
+                members = []
+                
+                array_profile = team.members.all()
+                for profile in array_profile:
+                    dict2 = {}
+                    dict2['username'] = profile.user.username
+                    members.append(dict2)
+
+                myDict['members'] = members 
+
+                data.append(myDict)
+
+            return Response({'teams': data}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            print(e)
+            return Response({'status': "Internal Server Error, We'll Check It Later"},
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)

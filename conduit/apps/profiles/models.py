@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields.related import ForeignKey
 
 from conduit.apps.core.models import TimestampedModel
 
@@ -12,6 +13,9 @@ class Profile(TimestampedModel):
         'authentication.User', on_delete=models.CASCADE
     )
 
+    team = models.ForeignKey(
+        'profiles.Team', on_delete=models.CASCADE, related_name='members', null=True,
+    )
     # Each user profile will have a field where they can tell other users
     # something about themselves. This field will be empty when the user
     # creates their account, so we specify `blank=True`.
@@ -68,3 +72,6 @@ class Profile(TimestampedModel):
     def has_favorited(self, article):
         """Returns True if we have favorited `article`; else False."""
         return self.favorites.filter(pk=article.pk).exists()
+
+class Team(TimestampedModel):
+    name = models.CharField(max_length=255)
