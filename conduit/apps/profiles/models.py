@@ -8,9 +8,7 @@ class Profile(TimestampedModel):
     # User models. By creating a one-to-one relationship between the two, we
     # are formalizing this relationship. Every user will have one -- and only
     # one -- related Profile model.
-    user = models.OneToOneField(
-        'authentication.User', on_delete=models.CASCADE
-    )
+    user = models.OneToOneField("authentication.User", on_delete=models.CASCADE)
 
     # Each user profile will have a field where they can tell other users
     # something about themselves. This field will be empty when the user
@@ -27,16 +25,10 @@ class Profile(TimestampedModel):
     # you are following mean does not mean that I am following you. This is
     # what `symmetrical=False` does for us.
     follows = models.ManyToManyField(
-        'self',
-        related_name='followed_by',
-        symmetrical=False
+        "self", related_name="followed_by", symmetrical=False
     )
 
-    favorites = models.ManyToManyField(
-        'articles.Article',
-        related_name='favorited_by'
-    )
-
+    favorites = models.ManyToManyField("articles.Article", related_name="favorited_by")
 
     def __str__(self):
         return self.user.username

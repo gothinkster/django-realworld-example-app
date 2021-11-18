@@ -12,11 +12,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     # Ensure passwords are at least 8 characters long, no longer than 128
     # characters, and can not be read by the client.
-    password = serializers.CharField(
-        max_length=128,
-        min_length=8,
-        write_only=True
-    )
+    password = serializers.CharField(max_length=128, min_length=8, write_only=True)
 
     # The client should not be able to send a token along with a registration
     # request. Making `token` read-only handles that for us.
@@ -26,7 +22,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         model = User
         # List all of the fields that could possibly be included in a request
         # or response, including fields specified explicitly above.
-        fields = ['email', 'username', 'password', 'token']
+        fields = ["email", "username", "password", "token"]
 
     def create(self, validated_data):
         # Use the `create_user` method we wrote earlier to create a new user.
@@ -45,22 +41,18 @@ class LoginSerializer(serializers.Serializer):
         # user in, this means validating that they've provided an email
         # and password and that this combination matches one of the users in
         # our database.
-        email = data.get('email', None)
-        password = data.get('password', None)
+        email = data.get("email", None)
+        password = data.get("password", None)
 
         # As mentioned above, an email is required. Raise an exception if an
         # email is not provided.
         if email is None:
-            raise serializers.ValidationError(
-                'An email address is required to log in.'
-            )
+            raise serializers.ValidationError("An email address is required to log in.")
 
         # As mentioned above, a password is required. Raise an exception if a
         # password is not provided.
         if password is None:
-            raise serializers.ValidationError(
-                'A password is required to log in.'
-            )
+            raise serializers.ValidationError("A password is required to log in.")
 
         # The `authenticate` method is provided by Django and handles checking
         # for a user that matches this email/password combination. Notice how
@@ -72,7 +64,7 @@ class LoginSerializer(serializers.Serializer):
         # `authenticate` will return `None`. Raise an exception in this case.
         if user is None:
             raise serializers.ValidationError(
-                'A user with this email and password was not found.'
+                "A user with this email and password was not found."
             )
 
         # Django provides a flag on our `User` model called `is_active`. The
@@ -80,61 +72,53 @@ class LoginSerializer(serializers.Serializer):
         # or otherwise deactivated. This will almost never be the case, but
         # it is worth checking for. Raise an exception in this case.
         if not user.is_active:
-            raise serializers.ValidationError(
-                'This user has been deactivated.'
-            )
-
-
+            raise serializers.ValidationError("This user has been deactivated.")
 
         # The `validate` method should return a dictionary of validated data.
         # This is the data that is passed to the `create` and `update` methods
         # that we will see later on.
-        return {
-            'email': user.email,
-            'username': user.username,
-            'token': user.token
-        }
+        return {"email": user.email, "username": user.username, "token": user.token}
 
 
 class UserSerializer(serializers.ModelSerializer):
     """Handles serialization and deserialization of User objects."""
 
-    # Passwords must be at least 8 characters, but no more than 128 
+    # Passwords must be at least 8 characters, but no more than 128
     # characters. These values are the default provided by Django. We could
     # change them, but that would create extra work while introducing no real
     # benefit, so let's just stick with the defaults.
-    password = serializers.CharField(
-        max_length=128,
-        min_length=8,
-        write_only=True
-    )
+    password = serializers.CharField(max_length=128, min_length=8, write_only=True)
 
     # When a field should be handled as a serializer, we must explicitly say
     # so. Moreover, `UserSerializer` should never expose profile information,
     # so we set `write_only=True`.
     profile = ProfileSerializer(write_only=True)
-    
+
     # We want to get the `bio` and `image` fields from the related Profile
     # model.
-    bio = serializers.CharField(source='profile.bio', read_only=True)
-    image = serializers.CharField(source='profile.image', read_only=True)
+    bio = serializers.CharField(source="profile.bio", read_only=True)
+    image = serializers.CharField(source="profile.image", read_only=True)
 
     class Meta:
         model = User
         fields = (
-            'email', 'username', 'password', 'token', 'profile', 'bio', 
-            'image',
+            "email",
+            "username",
+            "password",
+            "token",
+            "profile",
+            "bio",
+            "image",
         )
 
         # The `read_only_fields` option is an alternative for explicitly
         # specifying the field with `read_only=True` like we did for password
         # above. The reason we want to use `read_only_fields` here is because
         # we don't need to specify anything else about the field. For the
-        # password field, we needed to specify the `min_length` and 
+        # password field, we needed to specify the `min_length` and
         # `max_length` properties too, but that isn't the case for the token
         # field.
-        read_only_fields = ('token',)
-
+        read_only_fields = ("token",)
 
     def update(self, instance, validated_data):
         """Performs an update on a User."""
@@ -144,11 +128,11 @@ class UserSerializer(serializers.ModelSerializer):
         # salting passwords, which is important for security. What that means
         # here is that we need to remove the password field from the
         # `validated_data` dictionary before iterating over it.
-        password = validated_data.pop('password', None)
+        password = validated_data.pop("password", None)
 
         # Like passwords, we have to handle profiles separately. To do that,
         # we remove the profile data from the `validated_data` dictionary.
-        profile_data = validated_data.pop('profile', {})
+        profile_data = validated_data.pop("profile", {})
 
         for (key, value) in validated_data.items():
             # For the keys remaining in `validated_data`, we will set them on
@@ -169,7 +153,7 @@ class UserSerializer(serializers.ModelSerializer):
             # We're doing the same thing as above, but this time we're making
             # changes to the Profile model.
             setattr(instance.profile, key, value)
-            
+
         # Save the profile just like we saved the user.
         instance.profile.save()
 

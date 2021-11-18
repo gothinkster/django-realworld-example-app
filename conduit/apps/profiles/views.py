@@ -12,7 +12,7 @@ from .serializers import ProfileSerializer
 
 class ProfileRetrieveAPIView(RetrieveAPIView):
     permission_classes = (AllowAny,)
-    queryset = Profile.objects.select_related('user')
+    queryset = Profile.objects.select_related("user")
     renderer_classes = (ProfileJSONRenderer,)
     serializer_class = ProfileSerializer
 
@@ -22,11 +22,9 @@ class ProfileRetrieveAPIView(RetrieveAPIView):
         try:
             profile = self.queryset.get(user__username=username)
         except Profile.DoesNotExist:
-            raise NotFound('A profile with this username does not exist.')
+            raise NotFound("A profile with this username does not exist.")
 
-        serializer = self.serializer_class(profile, context={
-            'request': request
-        })
+        serializer = self.serializer_class(profile, context={"request": request})
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -42,13 +40,11 @@ class ProfileFollowAPIView(APIView):
         try:
             followee = Profile.objects.get(user__username=username)
         except Profile.DoesNotExist:
-            raise NotFound('A profile with this username was not found.')
+            raise NotFound("A profile with this username was not found.")
 
         follower.unfollow(followee)
 
-        serializer = self.serializer_class(followee, context={
-            'request': request
-        })
+        serializer = self.serializer_class(followee, context={"request": request})
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -58,15 +54,50 @@ class ProfileFollowAPIView(APIView):
         try:
             followee = Profile.objects.get(user__username=username)
         except Profile.DoesNotExist:
-            raise NotFound('A profile with this username was not found.')
+            raise NotFound("A profile with this username was not found.")
 
         if follower.pk is followee.pk:
-            raise serializers.ValidationError('You can not follow yourself.')
+            raise serializers.ValidationError("You can not follow yourself.")
 
         follower.follow(followee)
 
-        serializer = self.serializer_class(followee, context={
-            'request': request
-        })
+        serializer = self.serializer_class(followee, context={"request": request})
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class ProfileFollow2APIView(APIView):
+    permission_classes = (IsAuthenticated,)
+    renderer_classes = (ProfileJSONRenderer,)
+    serializer_class = ProfileSerializer
+
+    def delete(self, request, username=None):
+        follower = self.request.user.profile
+
+        try:
+            followee = Profile.objects.get(user__username=username)
+        except Profile.DoesNotExist:
+            raise NotFound("A profile with this username was not found.")
+
+        follower.unfollow(followee)
+
+        serializer = self.serializer_class(followee, context={"request": request})
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, username=None):
+        follower = self.request.user.profile
+
+        try:
+            followee = Profile.objects.get(user__username=username)
+        except Profile.DoesNotExist:
+            raise NotFound("A profile with this username was not found.")
+
+        if follower.pk is followee.pk:
+            raise serializers.ValidationError("You can not follow yourself.")
+
+        follower.follow(followee)
+
+        serializer = self.serializer_class(followee, context={"request": request})
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)

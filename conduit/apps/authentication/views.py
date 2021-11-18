@@ -5,9 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .renderers import UserJSONRenderer
-from .serializers import (
-    LoginSerializer, RegistrationSerializer, UserSerializer
-)
+from .serializers import LoginSerializer, RegistrationSerializer, UserSerializer
 
 
 class RegistrationAPIView(APIView):
@@ -17,7 +15,7 @@ class RegistrationAPIView(APIView):
     serializer_class = RegistrationSerializer
 
     def post(self, request):
-        user = request.data.get('user', {})
+        user = request.data.get("user", {})
 
         # The create serializer, validate serializer, save serializer pattern
         # below is common and you will see it a lot throughout this course and
@@ -35,7 +33,7 @@ class LoginAPIView(APIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
-        user = request.data.get('user', {})
+        user = request.data.get("user", {})
 
         # Notice here that we do not call `serializer.save()` like we did for
         # the registration endpoint. This is because we don't actually have
@@ -61,16 +59,15 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def update(self, request, *args, **kwargs):
-        user_data = request.data.get('user', {})
+        user_data = request.data.get("user", {})
 
         serializer_data = {
-            'username': user_data.get('username', request.user.username),
-            'email': user_data.get('email', request.user.email),
-
-            'profile': {
-                'bio': user_data.get('bio', request.user.profile.bio),
-                'image': user_data.get('image', request.user.profile.image)
-            }
+            "username": user_data.get("username", request.user.username),
+            "email": user_data.get("email", request.user.email),
+            "profile": {
+                "bio": user_data.get("bio", request.user.profile.bio),
+                "image": user_data.get("image", request.user.profile.image),
+            },
         }
 
         # Here is that serialize, validate, save pattern we talked about
@@ -82,4 +79,3 @@ class UserRetrieveUpdateAPIView(RetrieveUpdateAPIView):
         serializer.save()
 
         return Response(serializer.data, status=status.HTTP_200_OK)
-

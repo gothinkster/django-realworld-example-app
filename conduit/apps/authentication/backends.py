@@ -8,12 +8,12 @@ from .models import User
 
 
 class JWTAuthentication(authentication.BaseAuthentication):
-    authentication_header_prefix = 'Token'
+    authentication_header_prefix = "Token"
 
     def authenticate(self, request):
         """
         The `authenticate` method is called on every request, regardless of
-        whether the endpoint requires authentication. 
+        whether the endpoint requires authentication.
 
         `authenticate` has two possible return values:
 
@@ -22,7 +22,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         this is when the request does not include a token in the
         headers.
 
-        2) `(user, token)` - We return a user/token combination when 
+        2) `(user, token)` - We return a user/token combination when
         authentication was successful.
 
         If neither of these two cases were met, that means there was an error.
@@ -33,7 +33,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         request.user = None
 
         # `auth_header` should be an array with two elements: 1) the name of
-        # the authentication header (in this case, "Token") and 2) the JWT 
+        # the authentication header (in this case, "Token") and 2) the JWT
         # that we should authenticate against.
         auth_header = authentication.get_authorization_header(request).split()
         auth_header_prefix = self.authentication_header_prefix.lower()
@@ -56,8 +56,8 @@ class JWTAuthentication(authentication.BaseAuthentication):
         # we simply have to decode `prefix` and `token`. This does not make for
         # clean code, but it is a good decision because we would get an error
         # if we didn't decode these values.
-        prefix = auth_header[0].decode('utf-8')
-        token = auth_header[1].decode('utf-8')
+        prefix = auth_header[0].decode("utf-8")
+        token = auth_header[1].decode("utf-8")
 
         if prefix.lower() != auth_header_prefix:
             # The auth header prefix is not what we expected. Do not attempt to
@@ -77,17 +77,17 @@ class JWTAuthentication(authentication.BaseAuthentication):
         try:
             payload = jwt.decode(token, settings.SECRET_KEY)
         except:
-            msg = 'Invalid authentication. Could not decode token.'
+            msg = "Invalid authentication. Could not decode token."
             raise exceptions.AuthenticationFailed(msg)
 
         try:
-            user = User.objects.get(pk=payload['id'])
+            user = User.objects.get(pk=payload["id"])
         except User.DoesNotExist:
-            msg = 'No user matching this token was found.'
+            msg = "No user matching this token was found."
             raise exceptions.AuthenticationFailed(msg)
 
         if not user.is_active:
-            msg = 'This user has been deactivated.'
+            msg = "This user has been deactivated."
             raise exceptions.AuthenticationFailed(msg)
 
         return (user, token)
